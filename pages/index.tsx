@@ -119,7 +119,7 @@ const Home: NextPage = () => {
 
   const title = `Quiz: ${quizData.title.toString()}`;
   const description = `${quizData.description}`;
-  const url = "https://aft-nyc.vercel.app/";
+  const url = "https://aft-nyc.vercel.app";
   const img = "https://s6.imgcdn.dev/GRuTK.png";
 
   return (
