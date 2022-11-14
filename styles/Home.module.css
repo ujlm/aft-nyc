@@ -59,7 +59,7 @@
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
-  background-color: rgba(140, 41, 185, 0.76);
+  background-color:rgb(37, 0, 61,.8);
   color: #fff;
   padding: 25px;
   border-radius: 25px;
@@ -99,7 +99,7 @@
 
 .questionWrapper,
 .result {
-  width: 80%;
+  max-width: 80%;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.7);
   border-radius: 16px;
@@ -109,6 +109,9 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 25px;
   border-radius: 25px;
+}
+.questionWrapper h2 {
+  font-size: 28px;
 }
 
 .result {
@@ -216,11 +219,11 @@
 button.button {
   background-color: transparent;
   border: 2px solid #fff;
-  color: rgb(55, 8, 65);
+  color: #25003d;
   border-radius: 15px;
   padding: 10px;
   cursor: pointer;
-  background-color: rgba(218, 218, 218, 0.589);
+  background-color: rgba(218, 218, 218, 0.8);
 }
 button.button:hover {
   background-color: #fff;

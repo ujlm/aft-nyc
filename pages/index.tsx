@@ -71,6 +71,7 @@ const Home: NextPage = () => {
     setCurrentQuestion(0);
   }
 
+  /*
   useEffect(() => {
     api.search
       .getPhotos({ query: "new york", orientation: "landscape" })
@@ -81,6 +82,7 @@ const Home: NextPage = () => {
         console.log("something went wrong!");
       });
   }, []);
+  */
 
   const upScore = (index: number, event: any) => {
     const t = event.currentTarget;
@@ -117,13 +119,13 @@ const Home: NextPage = () => {
 
   const title = `Quiz: ${quizData.title.toString()}`;
   const description = `${quizData.description}`;
-  const url = "https://what-type-of-founder-are-you.vercel.app";
+  const url = "https://aft-nyc.vercel.app/";
   const img = "https://s6.imgcdn.dev/G0AmC.png";
 
   return (
     <div className={styles.container}
-    style={data && {
-      backgroundImage: `url('${data.response.results[1].urls.regular}')`,
+    style={{
+      backgroundImage: `url('https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzODA1NTN8MHwxfHNlYXJjaHwyfHxuZXclMjB5b3JrfGVufDB8MHx8fDE2Njg0MzQ0NDU&ixlib=rb-4.0.3&q=100&w=1920')`,
       backgroundSize: 'cover'
     }}>
       <Head>
@@ -217,6 +219,10 @@ const Home: NextPage = () => {
               <h1>Your borough is <em>{quizData.results[outcome].title}</em></h1>
               <span>
                 {quizData.results[outcome]?.description}
+              </span>
+              <br/>
+              <span style={{fontSize:'11px'}}>Source:{' '}
+                <Link href={'https://www.nycgo.com/boroughs-neighborhoods/'} target="_blank" rel='noreferrer'><a style={{textDecoration:'underline'}}>NYC Go</a></Link>
               </span>
               <div className={styles.shareBlock}>
                 <h3>Share your result</h3>
