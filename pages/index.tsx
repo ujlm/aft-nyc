@@ -120,7 +120,7 @@ const Home: NextPage = () => {
   const title = `Quiz: ${quizData.title.toString()}`;
   const description = `${quizData.description}`;
   const url = "https://aft-nyc.vercel.app/";
-  const img = "https://s6.imgcdn.dev/G0AmC.png";
+  const img = "https://s6.imgcdn.dev/GRuTK.png";
 
   return (
     <div className={styles.container}
@@ -239,8 +239,8 @@ const Home: NextPage = () => {
                   </FacebookShareButton>
                   <EmailShareButton 
                     url={`${url}/result/${quizData.results[outcome]?.title}`}
-                    subject={`What type of founder are you? I am a ${quizData.results[outcome]?.title}`}
-                    body={`I did this test "What type of founder are you?" and apparently I am a ${quizData.results[outcome]?.title}. You can find out too!`}
+                    subject={`Which NYC Borough suits you? I am a ${quizData.results[outcome]?.title}`}
+                    body={`I did this test "Which NYC Borough suits you?" and apparently I'm really at home in ${quizData.results[outcome]?.title}. You can find out too!`}
                   >
                     <EmailIcon size={32} round={true} />
                   </EmailShareButton>
