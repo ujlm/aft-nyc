@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import startsWithVowel from '../helpers/startsWithVowel'
 import styles from '../styles/Home.module.css'
 import quizData from './quizData.json'
@@ -11,6 +11,7 @@ import FacebookIcon from 'react-share/lib/FacebookIcon'
 import LinkedinIcon from 'react-share/lib/LinkedinIcon'
 import EmailShareButton from 'react-share/lib/EmailShareButton'
 import EmailIcon from 'react-share/lib/EmailIcon'
+import { createApi } from 'unsplash-js'
 
 function shuffleArray(array: any[]) {
   let curId = array.length;
@@ -40,9 +41,44 @@ const share = {
   }]
 };
 
+const api = createApi({
+  // Don't forget to set your access token here!
+  // See https://unsplash.com/developers
+  accessKey: "bW6i05RcqSv4n48kx_ZjGaRQByqN8rZ_3Brl5rEYiAU"
+}); 
+type Photo = {
+  id: number;
+  width: number;
+  height: number;
+  urls: { large: string; regular: string; raw: string; small: string };
+  color: string | null;
+  user: {
+    username: string;
+    name: string;
+  };
+};
+
+const PhotoComp: React.FC<{ photo: Photo }> = ({ photo }) => {
+  const { user, urls } = photo;
+
+  return (
+    <Fragment>
+      <img className="img" src={urls.regular} />
+      <a
+        className="credit"
+        target="_blank"
+        href={`https://unsplash.com/@${user.username}`}
+      >
+        {user.name}
+      </a>
+    </Fragment>
+  );
+};
+
 const Home: NextPage = () => {
 
-  const [score, setScore] = useState<number[]>([0, 0, 0, 0]);
+  const [data, setPhotosResponse] = useState<any>(null);
+  const [score, setScore] = useState<number[]>([0, 0, 0, 0, 0]);
   const [stage, setStage] = useState<'intro' | 'questions' | 'results'>('intro');
   const [currentQuestion, setCurrentQuestion] = useState<number>(-1);
   const [outcome, setOutcome] = useState<number>(0);
@@ -51,6 +87,17 @@ const Home: NextPage = () => {
     setStage('questions');
     setCurrentQuestion(0);
   }
+
+  useEffect(() => {
+    api.search
+      .getPhotos({ query: "new york", orientation: "landscape" })
+      .then(result => {
+        setPhotosResponse(result);
+      })
+      .catch(() => {
+        console.log("something went wrong!");
+      });
+  }, []);
 
   const upScore = (index: number, event: any) => {
     const t = event.currentTarget;
@@ -91,7 +138,11 @@ const Home: NextPage = () => {
   const img = "https://s6.imgcdn.dev/G0AmC.png";
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container}
+    style={data && {
+      backgroundImage: `url('${data.response.results[1].urls.regular}')`,
+      backgroundSize: 'cover'
+    }}>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -146,67 +197,69 @@ const Home: NextPage = () => {
               {currentQuestion < 0 && (
                 <button
                   onClick={startQuiz}
-                  className={styles.card}
+                  className={styles.button}
                   style={{ maxWidth: '200px', fontSize: '1.5rem', textAlign: 'center' }}>Get started &rarr;</button>
               )}
             </>
           ) : <></>
         }
 
-        {stage !== 'results' ? (
-          <div className={styles.questionWrapper}>
-            {
-              currentQuestion >= 0 && (
-                <h2>{currentQuestion + 1}. {quizData.questions[currentQuestion].title}</h2>
-              )
-            }
-            <div className={`${styles.grid}`}>
-
-              {currentQuestion >= 0 && shuffleArray(quizData.questions[currentQuestion].answers).map((a, i) => (
-                <button
-                  key={i}
-                  onClick={(e: any) => upScore(a.answerIndex, e)}
-                  className={`${styles.card}`}
-                >
-                  <p>{a.answer}</p>
-                </button>
-              ))}
+        {stage !== 'results' ? 
+            stage !== 'intro' ? (
+              <div className={styles.questionWrapper}>
+              {
+                currentQuestion >= 0 && (
+                  <h2>{currentQuestion + 1}. {quizData.questions[currentQuestion].title}</h2>
+                )
+              }
+              <div className={`${styles.grid}`}>
+  
+                {currentQuestion >= 0 && shuffleArray(quizData.questions[currentQuestion].answers).map((a, i) => (
+                  <button
+                    key={i}
+                    onClick={(e: any) => upScore(a.answerIndex, e)}
+                    className={`${styles.card}`}
+                  >
+                    <p>{a.answer}</p>
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
-        )
+            ): ''
+     
           :
           (
             <div className={styles.result}>
-              <span style={{ fontSize: '98px', display: 'block', margin: '0 auto', width: '40%' }}>{quizData.results[outcome].emoji}</span>
-              <h1>You are a{startsWithVowel(quizData.results[outcome].title) ? 'n' : ''} <em>{quizData.results[outcome].title}</em></h1>
+              <span style={{ fontSize: '98px', display: 'block', margin: '0 auto', width: '40%' }}>{quizData.results[outcome]?.emoji}</span>
+              <h1>Your borough is <em>{quizData.results[outcome].title}</em></h1>
               <span>
-                {quizData.results[outcome].description}
+                {quizData.results[outcome]?.description}
               </span>
               <div className={styles.shareBlock}>
                 <h3>Share your result</h3>
                 <div>
                   <LinkedinShareButton
-                    url={`${url}/result/${quizData.results[outcome].title}`}
+                    url={`${url}/result/${quizData.results[outcome]?.title}`}
                   >
                     <LinkedinIcon size={32} round={true} />
                   </LinkedinShareButton>
                   <FacebookShareButton
-                    url={`${url}/result/${quizData.results[outcome].title}`}
+                    url={`${url}/result/${quizData.results[outcome]?.title}`}
                   >
                     <FacebookIcon size={32} round={true} />
                   </FacebookShareButton>
                   <EmailShareButton 
-                    url={`${url}/result/${quizData.results[outcome].title}`}
-                    subject={`What type of founder are you? I am a ${quizData.results[outcome].title}`}
-                    body={`I did this test "What type of founder are you?" and apparently I am a ${quizData.results[outcome].title}. You can find out too!`}
+                    url={`${url}/result/${quizData.results[outcome]?.title}`}
+                    subject={`What type of founder are you? I am a ${quizData.results[outcome]?.title}`}
+                    body={`I did this test "What type of founder are you?" and apparently I am a ${quizData.results[outcome]?.title}. You can find out too!`}
                   >
                     <EmailIcon size={32} round={true} />
                   </EmailShareButton>
                 </div>
               </div>
               <p>
-                If you’re a student in Belgium and interested to learn more about our startup scene, then apply for the Belgium Startup Trip happening November 3rd until November 5th.<br /><br />
-                <a href='https://www.aftleuven.be/belgium-startup-trip/' className={styles.card} style={{ display: 'block', maxWidth: '295px' }}>Join AFT Belgium Startup Trip &rarr;</a>
+                If you’re a student in Belgium and interested to learn more about the international startup scene, then apply for the Student Startup Trip.<br /><br />
+                <a href='https://www.aftleuven.be/student-startup-trip/' className={styles.card} style={{ display: 'block', maxWidth: '295px' }}>Join AFT Student Startup Trip &rarr;</a>
               </p>
             </div>
           )}
@@ -219,10 +272,7 @@ const Home: NextPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Quiz by{' '}
-          <span className={styles.logo}>
-            <Image src="/aft.svg" alt="AFT Logo" width={72} height={16} />
-          </span>
+          Quiz by{' '}Academics For Technology
         </a>
       </footer>
     </div>

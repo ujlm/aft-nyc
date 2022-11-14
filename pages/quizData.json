@@ -1,168 +1,173 @@
 {
-    "title": "What type of founder are you?",
-    "description": "Find out how you approach your startup.",
+    "title": "What New York City Borough are You?",
+    "description": "A subjective quiz based on common prejudices and personal opinions - and with a little bit of truth.",
     "questions": [
       {
-        "title": "Your sugar aunt has to move this weekend, and she asks for your help. Although you already have other plans, you want to help her. What do you do?",
+        "title": "What is your favorite sport?",
         "answers": [
           {
-            "answer": "I combine her stair elevator with an old chainsaw engine so that it supports heavy loads. Now all her belongings can be automatically carried upstairs!",
+            "answer": "Baseball!",
             "answerIndex": 0
           },
           {
-            "answer": "So what I have other plans? There are 24 hours in a day: I will find some time to help move!",
+            "answer": "I used to do Zumba, planking and aerobics, but now I'm into padel",
             "answerIndex": 1
           },
           {
-            "answer": "Unfortunately, I cannot help her move but I promise to install all the furniture next Monday.",
+            "answer": "(Ice) skating and parkour",
             "answerIndex": 2
           }
           ,
           {
-            "answer": "I show her a platform where she can find a student to do the job for a small fee.",
+            "answer": "Soccer, cricket or tennis",
             "answerIndex": 3
+          },
+          {
+            "answer": "Garden work and long walks",
+            "answerIndex": 4
           }
         ]
       },
       {
-        "title": "The Red Devils made it to the finals of the World Cup. Sadly, Thibaut Courtois got injured. Roberto Martinez asks you to replace him. What do you do?",
+        "title": "Let's put on some music. What do you pick?",
         "answers": [
           {
-            "answer": "I\"m in! This is the perfect time to test out my new hydraulic keeper gloves.",
+            "answer": "A raw old-school hip-hop mixtape.",
             "answerIndex": 0
           },
           {
-            "answer": "Simon Mignolet might be better suited for the job, but he seems a bit down. I tell him this is his moment to shine, he can do it!",
+            "answer": "I just discovered a new British DJ called Fried Alain. You have to check it out pal!",
             "answerIndex": 1
           },
           {
-            "answer": "The solution is simple: let's place a brick wall inside the goal: nobody can break my sturdy construction.",
+            "answer": "I prefer a total immersive experience: a musical or a big arena show of an A-list pop star",
             "answerIndex": 2
           }
           ,
           {
-            "answer": "I call Roberto Martinez back and tell him he shouldn\"t be asking this. Rather, he should devote his attention to the existing team, not to a random outsider.",
+            "answer": "I've got a great playlist with Spanish, Dutch, German, and Greek music",
             "answerIndex": 3
+          },
+          {
+            "answer": "Elvis!",
+            "answerIndex": 4
           }
         ]
       },
       {
-        "title": "Which criminal do you most identify with? ",
+        "title": "What is your main concern when you are offered a job?",
         "answers": [
           {
-            "answer": "Elisabeth Holmes",
+            "answer": "I want a job where I can directly interact with customers. I'd rather have a decent paycheck to support my after-hours hobbies.",
             "answerIndex": 0
           },
           {
-            "answer": "Charles Manson",
+            "answer": "My work needs to be my creative outlet: I'd like to start my own design studio.",
             "answerIndex": 1
           },
           {
-            "answer": "Jordan Belfort (from The Wolf of Wall Street)",
+            "answer": "Work hard, play hard. I don't mind long hours, as long as I'm fairly compensated.",
             "answerIndex": 2
           }
           ,
           {
-            "answer": " I wouldn\"t be a criminal myself; I would inform criminals on how to become one",
+            "answer": "I'll do the job, as long as I've got some time to spend with my family in the evening",
             "answerIndex": 3
+          },
+          {
+            "answer": "Physical work gives me satisfaction",
+            "answerIndex": 4
           }
         ]
       },
       {
-        "title": "Which car do you prefer? ",
+        "title": "We're almost there: are you a city person?",
         "answers": [
           {
-            "answer": "Solar One",
+            "answer": "I connect with people, not with bricks. I feel most at home when I'm part of a movement.",
             "answerIndex": 0
           },
           {
-            "answer": "I don\"t mind. Any car, as long as I can use it daily",
+            "answer": "I like the city, but not the noise, and certainly not the overly modern sky scrapers. Rather, I'd renovate an old charming house in a creative neighborhood.",
             "answerIndex": 1
           },
           {
-            "answer": "A tuned golf",
+            "answer": "I thrive in the urban jungle.",
             "answerIndex": 2
           }
           ,
           {
-            "answer": "A Mercedes-Benz",
+            "answer": "I want to live quietly in a family-friendly neighborhood, which is close to where it all happens",
             "answerIndex": 3
+          },
+          {
+            "answer": "I used to live in the city, but now I prefer to watch from a distance",
+            "answerIndex": 4
           }
         ]
       },
       {
-        "title": "What does your dream house look like?",
+        "title": "Last question already! If you're not hungry already, you certainly will be. What's your favorite food?",
         "answers": [
           {
-            "answer": "A lush tree house with a generator powered by photosynthesis",
+            "answer": "Something quick: a hotdog during the game.",
             "answerIndex": 0
           },
           {
-            "answer": "A mobilhome, so I can always be on the road.",
+            "answer": "A poké bowl, sushi or frozen yogurt.",
             "answerIndex": 1
           },
           {
-            "answer": "A giant villa that I built from the ground up with my bare hands. ",
+            "answer": "A burger at McDonald's, Wendy's, Shake Shack, Taco Bell, Five Guys, ... ",
             "answerIndex": 2
           }
           ,
           {
-            "answer": " A condo in Japanese hogyo style. I can show the architect how to approach this project.",
+            "answer": "Authentic ethnic food",
             "answerIndex": 3
-          }
-        ]
-      },
-      {
-        "title": "Last question: which of these companies would you prefer to work for?",
-        "answers": [
-          {
-            "answer": "Google",
-            "answerIndex": 0
           },
           {
-            "answer": "I would rather become a self-employed mental coach",
-            "answerIndex": 1
-          },
-          {
-            "answer": "A small custom software development studio",
-            "answerIndex": 2
-          }
-          ,
-          {
-            "answer": "McKinsey",
-            "answerIndex": 3
+            "answer": "Traditional, simple food",
+            "answerIndex": 4
           }
         ]
       }
     ],
     "results": [
       {
-        "title": "inventor",
-        "emoji": "💡",
-        "description": "You seek disruption, to boldly pursue a new product or business model. Famous inventors are Steve Jobs, Brian Chesky and Thomas Edison.",
+        "title": "the Bronx",
+        "emoji": "🎛️",
+        "description": "What do home-run heroes, hip-hop history and hand-pulled mozzarella have in common? You can find them all in the Bronx—that is, when you’re not wandering hundreds of acres of parkland, touring historic homes or strolling along New York City’s answer to the Champs-Élysées.",
         "cover": "https://s6.imgcdn.dev/G02SS.png",
-        "me_description": "I seek disruption, to boldly pursue a new product or business model. Famous inventors are Steve Jobs, Brian Chesky and Thomas Edison. What type of founder are you?"
+        "me_description": "Yo, I feel at home in the Bronx! What about you?"
       },
       {
-        "title": "driver",
-        "emoji": "🚘",
-        "description": "Your speciality is to get the best people on board, to motivate every person in your organization to pursue the mission. Famous drivers are Angela Merkel, Richard Branson and Martin Luther King Jr.",
+        "title": "Brooklyn",
+        "emoji": "🍣",
+        "description": "Hipsters and history buffs agree: Brooklyn is everyone’s style. The most populous borough has no one defining draw—people come for live music, eclectic eats, pro sports, immigrant history and world-class culture. Of course, you’ll cross paths with all kinds on the majestic span of the Brooklyn Bridge.",
         "cover": "https://s6.imgcdn.dev/G0SO2.png",
-        "me_description": "My speciality is to get the best people on board, to motivate every person in my organization to pursue the mission. What type of founder are you?"
+        "me_description": "I am a 'Brooklyn-person'! What about you?"
       },
       {
-        "title": "builder",
-        "emoji": "🧱",
-        "description": "You gotta love the hustle. If you have a goal, you will do everything you can do to turn your dream into a reality. Famous builders are Sara Blakely, Dr Dre and Elon Musk.",
+        "title": "Manhattan",
+        "emoji": "🗽",
+        "description": "Manhattan truly feels like the heart of it all. Broadway and Times Square sit at its electric center, but famous landmarks and household-name attractions can be found all over the island. Beyond the iconic are countless neighborhoods promising great rewards to those who explore.",
         "cover": "https://s6.imgcdn.dev/G0rEi.png",
-        "me_description": "I love the hustle. If I have a goal, I will do everything I can do to turn my dream into a reality. What type of founder are you?"
+        "me_description": "Big City life: I'm at home in Manhattan! What about you?"
       },
       {
-        "title": "guide",
-        "emoji": "🦮",
-        "description": "In your opinion, working better doesn\"t necessarily mean working harder. Efficiency and knowledge are your tools to improve the process of your company.",
+        "title": "Queens",
+        "emoji": "👑",
+        "description": "Queens is one of the most diverse places in the world. Many get their fill from the food scene alone, which ranges from exquisite Greek souvlaki to the best hot pot outside of Sichuan. The borough is also a major destination for sports fans, nature lovers and modern-art aficionados.",
         "guide": "https://s6.imgcdn.dev/G0xQH.png",
-        "me_description": "In my opinion, working better doesn\"t necessarily mean working harder. Efficiency and knowledge are my tools to improve the process of your company. What type of founder are you?"
+        "me_description": "Always felt quite royal: my NYC neighborhood is Queens. What about you?"
+      },
+      {
+        "title": "Staten Island",
+        "emoji": "🏝️",
+        "description": "Easily accessible by a scenic ride on the Staten Island Ferry, the greenest borough feels like a getaway within the City. Beyond a charming North Shore rich with maritime history, Staten Island is best known for its beaches, vast parkland and even a fully preserved colonial village.",
+        "guide": "https://s6.imgcdn.dev/G0xQH.png",
+        "me_description": "Kick back and relax, I belong in Staten Island. What about you?"
       }
     ]
   }
