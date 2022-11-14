@@ -95,6 +95,7 @@
   background-color: transparent;
   cursor: pointer;
   font-weight: bold;
+  color: #25003d;
 }
 
 .questionWrapper,
@@ -143,18 +144,6 @@
 .card.selected {
   background-color: #6d3c89;
   color: #fff;
-}
-
-@media (prefers-color-scheme: dark) {
-  .card:hover {
-    color: #eed530;
-    border-color: #eed530;
-  }
-
-  .card.selected {
-    background-color: #eed530;
-    color: #11001c;
-  }
 }
 
 @media screen and (max-width: 500px) {
