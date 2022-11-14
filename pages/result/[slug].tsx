@@ -95,7 +95,7 @@ const Result: NextPage<any> = ({ slug, result }) => {
 
 
                         </Head>
-                        <main style={{ maxWidth: 'calc(500px, 95vw)', margin: '0 auto', textAlign: 'center' }}>
+                        <main style={{ maxWidth: 'calc(500px, 95vw)', margin: '0 auto', textAlign: 'center', color: '#11001c' }}>
                             <div className={styles.shareResult} style={{ marginTop: '50px', marginBottom: '50px' }}>
                                 <span style={{ fontSize: '88px', display: 'block', margin: '0 auto', width: '40%' }}>{result.emoji}</span>
                                 <h1>I belong in <em>{result.title}</em></h1>
