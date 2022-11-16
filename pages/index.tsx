@@ -247,7 +247,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
               <p>
-                If you’re a student in Belgium and interested to learn more about the international startup scene, then apply for the Student Startup Trip.<br /><br />
+                If you’re a student in Belgium and interested to learn more about the international startup scene, then you can apply for the Student Startup Trip.<br /><br />
                 <a href='https://www.aftleuven.be/student-startup-trip/' className={styles.card} style={{ display: 'block', maxWidth: '295px' }}>Join AFT Student Startup Trip &rarr;</a>
               </p>
             </div>
